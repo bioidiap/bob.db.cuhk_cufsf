@@ -21,9 +21,9 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name='bob.db.cuhk_cufs',
+    name='bob.db.cuhk_cufsf',
     version='0.0.0a1',
-    description='CUHK Face Sketch Database (CUFS)',
+    description='CUHK Face Sketch FERET Database (CUFSF)',
     url='',
     license='GPLv3',
     keywords = "",
@@ -37,8 +37,6 @@ setup(
 
     install_requires=[
       'setuptools',
-      'bob.db.xm2vts',
-      'bob.db.arface',
       'bob.db.verification.utils' 
     ],
 
@@ -50,7 +48,7 @@ setup(
     entry_points = {
       # declare database to bob
       'bob.db': [
-        'cuhk_cufs = bob.db.cuhk_cufs.driver:Interface',
+        'cuhk_cufsf = bob.db.cuhk_cufsf.driver:Interface',
       ],
     },
 

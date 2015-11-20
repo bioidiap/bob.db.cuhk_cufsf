@@ -3,18 +3,37 @@
 .. Thu Apr 16 16:39:01 CEST 2015
 
 
+
+.. image:: http://img.shields.io/badge/docs-stable-yellow.png
+   :target: http://pythonhosted.org/bob.db.cuhk_cufsf/index.html
+.. image:: http://img.shields.io/badge/docs-latest-orange.png
+   :target: https://www.idiap.ch/software/bob/docs/latest/bioidiap/bob.db.cuhk_cufsf/master/index.html
+.. image:: https://travis-ci.org/bioidiap/bob.db.cufsf.svg?branch=master
+   :target: https://travis-ci.org/bioidiap/bob.db.cufsf
+.. image:: https://coveralls.io/repos/bioidiap/bob.db.cufsf/badge.png
+   :target: https://coveralls.io/r/bioidiap/bob.db.cufsf
+.. image:: https://img.shields.io/badge/github-master-0000c0.png
+   :target: https://github.com/bioidiap/bob.db.cufsf/tree/master
+.. image:: http://img.shields.io/pypi/v/bob.db.cufsf.png
+   :target: https://pypi.python.org/pypi/bob.db.cufsf
+.. image:: http://img.shields.io/pypi/dm/bob.db.cufsf.png
+   :target: https://pypi.python.org/pypi/bob.db.cufsf
+.. image:: https://img.shields.io/badge/original-data--files-a000a0.png
+   :target: http://mmlab.ie.cuhk.edu.hk/archive/cufsf/
+
+
+
+
 =======================================================
- CUHK Face Sketch Database (CUFS)
+CUHK Face Sketch FERET Database (CUFSF)
 =======================================================
 
-This package contains the access API and descriptions for the `CUHK Face Sketch Database (CUFS) <http://mmlab.ie.cuhk.edu.hk/archive/facesketch.html>`. 
+This package contains the access API and descriptions for the `CUHK Face Sketch FERET Database (CUFSF) <http://mmlab.ie.cuhk.edu.hk/archive/cufsf/>`. 
 The actual raw data for the database should be downloaded from the original URL. 
 This package only contains the Bob accessor methods to use the DB directly from python, with the original protocol of the database.
 
-CUHK Face Sketch database (CUFS) is for research on face sketch synthesis and face sketch recognition.
-It includes 188 faces from the Chinese University of Hong Kong (CUHK) student database, 123 faces from the AR database, and 295 faces from the XM2VTS database.
-There are 606 faces in total.
-For each face, there is a sketch drawn by an artist based on a photo taken in a frontal pose, under normal lighting condition, and with a neutral expression.
+CUHK Face Sketch FERET Database (CUFSF) is for research on face sketch synthesis and face sketch recognition.
+It includes 1194 faces from the FERET database with their respective sketches (drawn by an artist based on a photo of the FERET database).
 
 
 You would normally not install this package unless you are maintaining it. 
@@ -36,7 +55,7 @@ The package is available in two different distribution formats:
 1. You can download it from `PyPI <http://pypi.python.org/pypi>`_, or
 
 2. You can download it in its source form from `its git repository
-   <https://github.com/bioidiap/bob.db.cuhk_cufs>`_.
+   <https://github.com/bioidiap/bob.db.cuhk_cufsf>`_.
 
 You can mix and match points 1/2 and a/b above based on your requirements. Here
 are some examples:
@@ -51,11 +70,11 @@ script)::
 
     install_requires=[
       ...
-      "bob.db.cuhk_cufs",
+      "bob.db.cuhk_cufsf",
     ],
 
 Proceed normally with your ``boostrap/buildout`` steps and you should be all
-set. That means you can now import the ``bob.db.cuhk_cufs`` namespace into your scripts.
+set. That means you can now import the ``bob.db.cuhk_cufsf`` namespace into your scripts.
 
 Modify your buildout.cfg and download from git
 ==============================================
@@ -69,8 +88,8 @@ lines::
   ...
   extensions = mr.developer
   auto-checkout = *
-  eggs = bob.db.cuhk_cufs
+  eggs = bob.db.cuhk_cufsf
 
   [sources]
-  bob.db.cuhk_cufs = git https://github.com/bioidiap/bob.db.cuhk_cufs.git
+  bob.db.cuhk_cufsf = git https://github.com/bioidiap/bob.db.cuhk_cufsf.git
   ...
