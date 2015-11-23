@@ -77,7 +77,7 @@ def add_clients_files_annotations(session, verbose = True):
                      modality="photo"
                 ))
     output[client_id_offset].append(file_id_offset)
-    annotations = open("bob/db/cuhk_cufsf/data/photo_points/{0}tif.pos".format(feret_clients[c][1])).readlines()[0].rstrip("\n").split(" ")
+    annotations = open("bob/db/cuhk_cufsf/data/photo_points/{0}.tif.pos".format(feret_clients[c][1])).readlines()[0].rstrip("\n").split(" ")
     session.add(Annotation(file_id = file_id_offset, re_x=annotations[2], re_y=annotations[3], le_x=annotations[0], le_y=annotations[1] ))
     
 

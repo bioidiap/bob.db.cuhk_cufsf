@@ -48,6 +48,8 @@ class Database(bob.db.verification.utils.SQLiteDatabase, bob.db.verification.uti
     bob.db.verification.utils.SQLiteDatabase.__init__(self, SQLITE_FILE, File)
     bob.db.verification.utils.ZTDatabase.__init__(self, original_directory=original_directory, original_extension=original_extension)
 
+    self.feret_directory = feret_directory
+
   
   def protocols(self):
     return PROTOCOLS

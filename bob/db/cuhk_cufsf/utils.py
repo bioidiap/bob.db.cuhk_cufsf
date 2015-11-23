@@ -63,7 +63,7 @@ class FERETWrapper():
     for c in raw_clients:
       c_id       = c[0:5]
       sketh_file = c[0:5]
-      photo_file = c[0:-4]
+      photo_file = c[0:-5]
       
       client_files[c[0:5]] = [sketh_file,photo_file]
     
