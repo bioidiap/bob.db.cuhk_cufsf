@@ -25,11 +25,11 @@ from .models import PROTOCOLS, GROUPS, PURPOSES
 
 from .driver import Interface
 
-import bob.db.verification.utils
+import bob.db.base
 
 SQLITE_FILE = Interface().files()[0]
 
-class Database(bob.db.verification.utils.SQLiteDatabase, bob.db.verification.utils.ZTDatabase):
+class Database(bob.db.base.SQLiteDatabase):
 
   """Wrapper class for the CUHK-CUFSF database for Heterogeneous face recognition recognition (http://mmlab.ie.cuhk.edu.hk/archive/cufsf/).
   """
@@ -45,8 +45,9 @@ class Database(bob.db.verification.utils.SQLiteDatabase, bob.db.verification.uti
     """
 
     # call base class constructors to open a session to the database
-    bob.db.verification.utils.SQLiteDatabase.__init__(self, SQLITE_FILE, File)
-    bob.db.verification.utils.ZTDatabase.__init__(self, original_directory=original_directory, original_extension=original_extension)
+    super(Database, self).__init__(SQLITE_FILE, File)
+    self.original_directory = original_directory
+    self.original_extension = original_extension
 
     self.feret_directory = feret_directory
 
@@ -96,7 +97,7 @@ class Database(bob.db.verification.utils.SQLiteDatabase, bob.db.verification.uti
   def annotations(self, file, annotation_type="eyes_center"):
     """This function returns the annotations for the given file id as a dictionary.
     Keyword parameters:
-    file : :py:class:`bob.db.verification.utils.File` or one of its derivatives
+    file : :py:class:`bob.db.base.File` or one of its derivatives
       The File object you want to retrieve the annotations for,
     Return value:
       A dictionary of annotations, for face images usually something like {'leye':(le_y,le_x), 'reye':(re_y,re_x), ...},
@@ -175,21 +176,4 @@ class Database(bob.db.verification.utils.SQLiteDatabase, bob.db.verification.uti
   def groups(self, protocol = None, **kwargs):
     """This function returns the list of groups for this database."""
     return GROUPS
-
-
-
-  def tmodel_ids(self, groups = None, protocol = None, **kwargs):
-    """This function returns the ids of the T-Norm models of the given groups for the given protocol."""
-
-    return []
-
-
-  def tobjects(self, protocol=None, model_ids=None, groups=None):
-    #No TObjects    
-    return []
-
-
-  def zobjects(self, protocol=None, groups=None):
-    #No TObjects    
-    return []
 
