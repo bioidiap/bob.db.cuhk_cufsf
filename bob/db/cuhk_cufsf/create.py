@@ -24,7 +24,7 @@ This script creates the CUHK-CUFS database in a single pass.
 import os
 
 from .models import *
-from utils import FERETWrapper
+from .utils import FERETWrapper
 import pkg_resources
 
 def add_clients_files_annotations(session, verbose = True):
