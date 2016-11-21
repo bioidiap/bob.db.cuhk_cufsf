@@ -11,6 +11,8 @@ This file has some utilities to deal with the files provided by the database
 import os
 import numpy
 import bob.db.arface
+import pkg_resources
+
 
 def read_annotations(file_name):
   """
@@ -42,7 +44,7 @@ class FERETWrapper():
   """
 
   def __init__(self, 
-      photo_file_name=os.path.join(os.path.curdir,"bob","db","cuhk_cufsf","data","feret_filenames.txt")
+      photo_file_name = pkg_resources.resource_filename(__name__, "data/feret_filenames.txt")
    ):
 
     self.m_photo_file_name  = photo_file_name

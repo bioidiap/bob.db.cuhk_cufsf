@@ -19,13 +19,16 @@
 
 from setuptools import setup, find_packages
 
+from bob.extension.utils import load_requirements
+install_requires = load_requirements()
+
 setup(
 
     name='bob.db.cuhk_cufsf',
     version='0.0.0a1',
     description='CUHK Face Sketch FERET Database (CUFSF)',
     url='',
-    license='GPLv3',
+    license='BSD',
     keywords = "",
     author='Tiago de Freitas Pereira',
     author_email='tiago.pereira@idiap.ch',
@@ -35,10 +38,7 @@ setup(
     include_package_data=True,
     zip_safe = False,
 
-    install_requires=[
-      'setuptools',
-      'bob.db.verification.utils' 
-    ],
+    install_requires=install_requires,
 
     namespace_packages = [
       'bob',
@@ -55,7 +55,7 @@ setup(
     classifiers = [
       'Development Status :: 4 - Beta',
       'Intended Audience :: Education',
-      'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+      'License :: OSI Approved :: BSD License',
       'Natural Language :: English',
       'Programming Language :: Python',
       'Programming Language :: Python :: 3',

@@ -25,6 +25,7 @@ import os
 
 from .models import *
 from utils import FERETWrapper
+import pkg_resources
 
 def add_clients_files_annotations(session, verbose = True):
 
@@ -63,8 +64,8 @@ def add_clients_files_annotations(session, verbose = True):
                 ))                
     output[client_id_offset] = [file_id_offset]
 
-    r_annotations = open("bob/db/cuhk_cufsf/data/sketch_points/{0}.3pts".format(feret_clients[c][0])).readlines()[0].rstrip("\n").split(" ")
-    l_annotations = open("bob/db/cuhk_cufsf/data/sketch_points/{0}.3pts".format(feret_clients[c][0])).readlines()[1].rstrip("\n").split(" ")    
+    r_annotations = open(pkg_resources.resource_filename(__name__, "data/sketch_points/{0}.3pts".format(feret_clients[c][0]))).readlines()[0].rstrip("\n").split(" ") 
+    l_annotations = open(pkg_resources.resource_filename(__name__, "data/sketch_points/{0}.3pts".format(feret_clients[c][0]))).readlines()[1].rstrip("\n").split(" ")
     session.add(Annotation(file_id = file_id_offset, re_x=r_annotations[0], re_y=r_annotations[1], le_x=l_annotations[0], le_y=l_annotations[1] ))
 
     
@@ -77,7 +78,7 @@ def add_clients_files_annotations(session, verbose = True):
                      modality="photo"
                 ))
     output[client_id_offset].append(file_id_offset)
-    annotations = open("bob/db/cuhk_cufsf/data/photo_points/{0}.tif.pos".format(feret_clients[c][1])).readlines()[0].rstrip("\n").split(" ")
+    annotations = open(pkg_resources.resource_filename(__name__, "data/photo_points/{0}.tif.pos".format(feret_clients[c][1]))).readlines()[0].rstrip("\n").split(" ")
     session.add(Annotation(file_id = file_id_offset, re_x=annotations[2], re_y=annotations[3], le_x=annotations[0], le_y=annotations[1] ))
     
 

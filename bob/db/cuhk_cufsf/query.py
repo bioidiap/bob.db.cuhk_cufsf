@@ -60,13 +60,18 @@ class Database(bob.db.base.SQLiteDatabase):
 
 
   def original_file_name(self, file, check_existence = True):
-    """This function returns the original file name for the given File object.
-    Keyword parameters:
-    file : :py:class:`File` or a derivative
+    """
+    This function returns the original file name for the given File object.
+    
+    **Parameters**
+    
+    file: :py:class:`File`
       The File objects for which the file name should be retrieved
-    check_existence : bool
+      
+    check_existence: bool
       Check if the original file exists? IGNORED: ALWAYS CHECK
-    Return value : str
+      
+    **Return**
       The original file name for the given File object
     """
 
@@ -95,11 +100,15 @@ class Database(bob.db.base.SQLiteDatabase):
 
 
   def annotations(self, file, annotation_type="eyes_center"):
-    """This function returns the annotations for the given file id as a dictionary.
-    Keyword parameters:
-    file : :py:class:`bob.db.base.File` or one of its derivatives
+    """
+    This function returns the annotations for the given file id as a dictionary.
+    
+    **Parameters**
+    
+    file: :py:class:`bob.db.base.File`
       The File object you want to retrieve the annotations for,
-    Return value:
+
+    **Return**
       A dictionary of annotations, for face images usually something like {'leye':(le_y,le_x), 'reye':(re_y,re_x), ...},
       or None if there are no annotations for the given file ID (which is the case in this base class implementation).
     """    
@@ -129,7 +138,7 @@ class Database(bob.db.base.SQLiteDatabase):
     query = query.filter(bob.db.cuhk_cufsf.Protocol_File_Association.protocol.in_(protocols))
     query = query.filter(bob.db.cuhk_cufsf.Protocol_File_Association.purpose.in_(purposes))
 
-    if model_ids is not None:     
+    if model_ids is not None and not 'probe' in purposes:
       if type(model_ids) is not list and type(model_ids) is not tuple:
         model_ids = [model_ids]
      
