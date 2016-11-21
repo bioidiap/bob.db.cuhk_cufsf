@@ -10,7 +10,6 @@ This file has some utilities to deal with the files provided by the database
 
 import os
 import numpy
-import bob.db.arface
 import pkg_resources
 
 
