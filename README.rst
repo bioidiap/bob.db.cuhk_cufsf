@@ -14,8 +14,6 @@
    :target: https://gitlab.idiap.ch/bob/bob.db.cuhk_cufsf
 .. image:: http://img.shields.io/pypi/v/bob.db.cuhk_cufsf.png
    :target: https://pypi.python.org/pypi/bob.db.cuhk_cufsf
-.. image:: http://img.shields.io/pypi/dm/bob.db.cuhk_cufsf.png
-   :target: https://pypi.python.org/pypi/bob.db.cuhk_cufsf
 .. image:: https://img.shields.io/badge/original-data--files-a000a0.png
    :target: http://mmlab.ie.cuhk.edu.hk/archive/facesketch.html
 
@@ -26,8 +24,8 @@ CUHK Face Sketch FERET Database (CUFSF)
 
 This package is part of the signal-processing and machine learning toolbox
 Bob_.
-This package contains the access API and descriptions for the `CUHK Face Sketch Database (CUFS) <http://mmlab.ie.cuhk.edu.hk/archive/facesketch.html>`. 
-The actual raw data for the database should be downloaded from the original URL. 
+This package contains the access API and descriptions for the `CUHK Face Sketch Database (CUFS) <http://mmlab.ie.cuhk.edu.hk/archive/facesketch.html>`.
+The actual raw data for the database should be downloaded from the original URL.
 This package only contains the Bob accessor methods to use the DB directly from python, with the original protocol of the database.
 
 CUHK Face Sketch FERET Database (CUFSF) is for research on face sketch synthesis and face sketch recognition.
