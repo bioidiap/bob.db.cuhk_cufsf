@@ -45,13 +45,10 @@ class Database(bob.db.base.SQLiteDatabase):
     """
 
     # call base class constructors to open a session to the database
-    super(Database, self).__init__(SQLITE_FILE, File)
-    self.original_directory = original_directory
-    self.original_extension = original_extension
+    super(Database, self).__init__(SQLITE_FILE, File, original_directory, original_extension)
 
     self.feret_directory = feret_directory
 
-  
   def protocols(self):
     return PROTOCOLS
 
