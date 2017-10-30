@@ -55,6 +55,13 @@ class Database(bob.db.base.SQLiteDatabase):
   def purposes(self):
     return PURPOSES
 
+  @property
+  def modality_separator(self):
+      return "photo"
+
+  @property
+  def modalities(self):
+      return ['photo', 'sketch']
 
   def original_file_name(self, file, check_existence = True):
     """
