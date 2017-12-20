@@ -76,6 +76,10 @@ def test02_search_files_protocols():
     
       assert len(bob.db.cuhk_cufsf.Database().objects(protocol=p, groups="eval")) == 0
 
+      # Checking the modalities
+      assert len(bob.db.cuhk_cufsf.Database().objects(protocol=p, groups="world", modality=["photo"])) == world//2
+      assert len(bob.db.cuhk_cufsf.Database().objects(protocol=p, groups="world", modality=["sketch"])) == world//2
+      
 
 def test03_verification_files_protocols():
 
