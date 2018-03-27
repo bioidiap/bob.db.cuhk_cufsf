@@ -22,10 +22,14 @@ from setuptools import setup, find_packages
 from bob.extension.utils import load_requirements
 install_requires = load_requirements()
 
+# Define package version
+version = open("version.txt").read().rstrip()
+
+
 setup(
 
     name='bob.db.cuhk_cufsf',
-    version='0.0.0a1',
+    version=version,
     description='CUHK Face Sketch FERET Database (CUFSF)',
     url='',
     license='BSD',
