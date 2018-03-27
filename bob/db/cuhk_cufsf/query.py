@@ -32,18 +32,18 @@ SQLITE_FILE = Interface().files()[0]
 class Database(bob.db.base.SQLiteDatabase):
 
   """Wrapper class for the CUHK-CUFSF database for Heterogeneous face recognition recognition (http://mmlab.ie.cuhk.edu.hk/archive/cufsf/).
+  
+   Parameters:
+   -----------
+      original_directory: str
+         The CUHK-CUFS path
+      original_extension: str
+         The extension of the image files (**A list of possible extensions is acceptable**)
+      feret_directory: str
+         The CUHK-CUFS path      
   """
 
   def __init__(self, original_directory = None, original_extension = None, feret_directory = None):
-    """
-    Constructore
-    
-    Keyword parameters:
-      original_directory : The CUHK-CUFS path
-      original_extension : The extension of the image files (**A list of possible extensions is acceptable**)
-      feret_directory : The CUHK-CUFS path      
-    """
-
     # call base class constructors to open a session to the database
     super(Database, self).__init__(SQLITE_FILE, File, original_directory, original_extension)
 
