@@ -33,14 +33,16 @@ class Database(bob.db.base.SQLiteDatabase):
 
   """Wrapper class for the CUHK-CUFSF database for Heterogeneous face recognition recognition (http://mmlab.ie.cuhk.edu.hk/archive/cufsf/).
   
-   Parameters:
-   -----------
+   **Parameters**
+
       original_directory: str
          The CUHK-CUFS path
+         
       original_extension: str
          The extension of the image files (**A list of possible extensions is acceptable**)
+         
       feret_directory: str
-         The CUHK-CUFS path      
+         The CUHK-CUFS path
   """
 
   def __init__(self, original_directory = None, original_extension = None, feret_directory = None):
