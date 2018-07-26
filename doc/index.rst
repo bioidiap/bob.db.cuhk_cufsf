@@ -2,7 +2,7 @@
 .. @author: Tiago de Freitas Pereira <tiago.pereira@idiap.ch>
 .. @date:   Fri 20 Nov 2015 16:54:53 CET 
 
-.. _bob.db.cuhk_cufs:
+.. _bob.db.cuhk_cufsf:
 
 =======================================
 CUHK Face Sketch FERET Database (CUFSF)
