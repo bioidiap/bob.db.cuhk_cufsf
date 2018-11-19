@@ -88,7 +88,7 @@ class FERETWrapper():
     clients  = range(1,1195)
     world = 700
     dev   = 494
-    numpy.random.shuffle(clients)
+    numpy.random.shuffle(list(clients))
     
     return clients[0:world], clients[world:world+dev] 
 
@@ -109,7 +109,7 @@ class FERETWrapper():
     world  = 350
     dev    = 350
     test   = 494
-    numpy.random.shuffle(clients)
+    numpy.random.shuffle(list(clients))
     
     return clients[0:world], clients[world:world+dev], clients[world+dev:world+dev+test]
 

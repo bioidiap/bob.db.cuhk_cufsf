@@ -129,7 +129,7 @@ class File(Base, bob.db.base.File):
 
   modality_choices = ('photo', 'sketch')
 
-  id        = Column(String(100), primary_key=True, autoincrement=True)
+  id        = Column(String(100), primary_key=True)
   path      = Column(String(100), unique=True)
   client_id = Column(Integer, ForeignKey('client.id'))
   modality  = Column(Enum(*modality_choices))
