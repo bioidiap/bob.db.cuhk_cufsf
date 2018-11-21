@@ -10,6 +10,7 @@ This file has some utilities to deal with the files provided by the database
 
 import os
 import numpy
+numpy.random.seed(0)
 import pkg_resources
 
 
@@ -88,7 +89,8 @@ class FERETWrapper():
     clients  = range(1,1195)
     world = 700
     dev   = 494
-    numpy.random.shuffle(list(clients))
+    clients = list(clients)
+    numpy.random.shuffle(clients)
     
     return clients[0:world], clients[world:world+dev] 
 
@@ -109,7 +111,8 @@ class FERETWrapper():
     world  = 350
     dev    = 350
     test   = 494
-    numpy.random.shuffle(list(clients))
+    clients = list(clients)
+    numpy.random.shuffle(clients)
     
     return clients[0:world], clients[world:world+dev], clients[world+dev:world+dev+test]
 
