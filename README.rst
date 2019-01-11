@@ -5,7 +5,7 @@
 
 
 .. image:: http://img.shields.io/badge/docs-stable-yellow.png
-   :target: http://beatubulatest.lab.idiap.ch/private/docs/bob/bob.db.cuhk_cufsf/stable/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.cuhk_cufsf/stable/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.png
    :target: http://beatubulatest.lab.idiap.ch/private/docs/bob/bob.db.cuhk_cufsf/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.db.cuhk_cufs/badges/master/build.svg
@@ -35,11 +35,9 @@ It includes 1194 faces from the FERET database with their respective sketches (d
 Installation
 ------------
 
-Follow our `installation`_ instructions. Then, using the Python interpreter
-provided by the distribution, bootstrap and buildout this package::
-
-  $ python bootstrap-buildout.py
-  $ ./bin/buildout
+Follow our `installation`_ instructions. Then, to install this package, run::
+   
+   $ conda install bob.db.cuhk_cufsf
 
 
 Contact
